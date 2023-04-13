@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 const usersRoutes = require('./routes/users');
+const carsRoutes = require('./routes/cars');
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/crud-mongo')
@@ -20,6 +21,8 @@ app.use(bodyParser.json());
 
 // routes
 app.use('/users', usersRoutes);
+
+app.use('/cars', carsRoutes);
 
 // static files
 
